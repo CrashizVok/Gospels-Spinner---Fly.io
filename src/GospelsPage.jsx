@@ -5,15 +5,13 @@ import GospelCard from "./GospelCard";
 export default function GospelsPage() {
 	const [showGospels, setShowGospels] = useState(false);
 	const [gospels, setGospels] = useState([
-		{ name: "Matthew", text: "Matthew's gospel text goes here..." },
-		{ name: "Mark", text: "Mark's gospel text goes here..." },
-		{ name: "Luke", text: "Luke's gospel text goes here..." },
-		{ name: "John", text: "John's gospel text goes here..." },
+		{ name: "Matthew", text: "text" },
+		{ name: "Mark", text: "text" },
+		{ name: "Luke", text: "text" },
+		{ name: "John", text: "text." },
 	]);
 
-	const handleLoad = (gospelAuthor, content) => {
-		// TODO - implement handleLoad
-	};
+	const handleLoad = (gospelAuthor, content) => {};
 
 	return (
 		<div style={{ padding: 32 }}>
