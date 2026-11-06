@@ -11,7 +11,7 @@ export default function GospelsPage() {
 		{ name: "John", text: "text." },
 	]);
 
-	const handleLoad = (gospelAuthor, content) => {};
+	const handleLoad = () => {};
 
 	return (
 		<div style={{ padding: 32 }}>

@@ -9,6 +9,7 @@ export default function GospelCard({ gospel, onLoad }) {
 
 	const handleShowClick = () => {
 		setShowText(true);
+		setSpinnerShowing(true);
 		fetch(`http://localhost:3000/gospel`)
 			.then(async (text) => {
 				console.log("handleLoad text", text);
@@ -17,7 +18,8 @@ export default function GospelCard({ gospel, onLoad }) {
 					setGospelText(gotGospelText);
 				}
 			})
-			.catch(console.warn);
+			.catch(console.warn)
+			.finally(() => setSpinnerShowing(false));
 		onLoad(gospel.name, gospel.text);
 	};
 
@@ -52,10 +54,9 @@ export default function GospelCard({ gospel, onLoad }) {
 						textAlign: "left",
 					}}
 				>
-					{gospelText}
+					{isSpinnerShowing ? <Spinner size={30} dotSize={6} color="#555" /> : gospelText}
 				</div>
 			)}
-			{/* TODO - show Spinner while content is loading */}
 		</div>
 	);
 }
